@@ -164,12 +164,10 @@ void exportCSV(struct CSV_obj *csvobj, char *filename){
     for (int i = 0; i < csvobj->rows;i++){
         for(int j = 0; j < csvobj->cols; j++){
             //printf("%s", csvobj->table[i][j]);
+            fwrite(csvobj->table[i][j], 1, strlen(csvobj->table[i][j]),arq);
+
             if (j != csvobj->cols-1){
-                fwrite(csvobj->table[i][j], 1, strlen(csvobj->table[i][j]),arq);
                 fwrite(",", 1, sizeof(char),arq);
-            }
-            else {
-                fwrite(csvobj->table[i][j], 1, strlen(csvobj->table[i][j]),arq);
             }
         }
         if (i != csvobj->rows-1)
