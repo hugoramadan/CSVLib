@@ -28,6 +28,8 @@ void printDataTable(struct CSV_obj *csvobj);
 void printClassificationTable(struct CSV_obj *csvobj);
 struct CSV_obj constructCSVTable(const char* filename);
 enum TokenDataType classifyToken(char *token);
+void overwriteItem(struct CSV_obj *csvobj, int row, int col, char* newText);
+void exportCSV(struct CSV_obj *csvobj, char* filename);
 
 
 

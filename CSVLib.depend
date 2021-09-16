@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1631816188 source:c:\users\hugor\onedrive\codeblocksproj\csvlib\main.c
+1631821483 source:c:\users\hugor\onedrive\codeblocksproj\csvlib\main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	"CSVLib.h"
 
-1631814170 source:c:\users\hugor\onedrive\codeblocksproj\csvlib\csvlib.c
+1631829009 source:c:\users\hugor\onedrive\codeblocksproj\csvlib\csvlib.c
 	"CSVLib.h"
 	<string.h>
 	<stdio.h>
 	<ctype.h>
 
-1631655962 c:\users\hugor\onedrive\codeblocksproj\csvlib\csvlib.h
+1631821452 c:\users\hugor\onedrive\codeblocksproj\csvlib\csvlib.h
 	<stdio.h>
 	<stdlib.h>
 

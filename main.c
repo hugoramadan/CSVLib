@@ -15,6 +15,12 @@ int main(){
 
     printClassificationTable(&c);
 
+    overwriteItem(&c,1,0, "Outro Nome Qualquer Que Seja");
+
+    printDataTable(&c);
+
+    exportCSV(&c, "novocsv.csv");
+
     free(c.table);
 
     return 0;

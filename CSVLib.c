@@ -149,3 +149,31 @@ void printClassificationTable(struct CSV_obj *csvobj){
         printf("\n");
     }
 }
+
+void overwriteItem(struct CSV_obj *csvobj, int row, int col, char *newText){
+
+    int length = strlen(newText);
+    csvobj->table[row][col] = (char*)realloc(csvobj->table[row][col],length*sizeof(char));
+    strcpy(csvobj->table[row][col], newText);
+}
+
+void exportCSV(struct CSV_obj *csvobj, char *filename){
+
+    FILE *arq;
+    arq = fopen(filename,"w");
+    for (int i = 0; i < csvobj->rows;i++){
+        for(int j = 0; j < csvobj->cols; j++){
+            //printf("%s", csvobj->table[i][j]);
+            if (j != csvobj->cols-1){
+                fwrite(csvobj->table[i][j], 1, strlen(csvobj->table[i][j]),arq);
+                fwrite(",", 1, sizeof(char),arq);
+            }
+            else {
+                fwrite(csvobj->table[i][j], 1, strlen(csvobj->table[i][j]),arq);
+            }
+        }
+        if (i != csvobj->rows-1)
+            fwrite("\n", 1, sizeof(char),arq);
+    }
+    fclose(arq);
+}
